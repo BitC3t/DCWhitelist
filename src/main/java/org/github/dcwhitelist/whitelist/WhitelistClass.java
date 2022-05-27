@@ -12,10 +12,10 @@ import com.google.gson.JsonObject;
 
 public class WhitelistClass {
 
-	/*
+	/**
 	 * Used to check if player is whitelisted.
 	 * 
-	 * @param -> player: Bukkit Player (Player)
+	 * @param player Bukkit Player (as Player)
 	 */
 	public boolean isWhitelisted(Player player) {
 		return player.isWhitelisted();
@@ -29,10 +29,14 @@ public class WhitelistClass {
 		Bukkit.setWhitelist(false);
 	}
 	
-	/*
-	 * Used to whitelist a player
+	/**
+	 * Whitelists a player using their UUID and
+	 * Player Name. You can obtain the UUID via 
+	 * {@link #getUserUUID(String)} in the same class.
+	 * Very useful, and can be used in various places.
 	 * 
-	 * @param -> uuid : Player UUID (UUID)
+	 * @param  uuid       Player UUID (as UUID)
+	 * @param  playerName Player Username (as String)
 	 */
 	@SuppressWarnings("deprecation")
 	public void whitelistUser(UUID uuid, String playerName) {
@@ -41,10 +45,13 @@ public class WhitelistClass {
 		Bukkit.reloadWhitelist();
 	}
 	
-	/*
-	 * Used to get UUID from Mojang API
-	 * 
-	 * @param -> playerName : Bukkit Player Name (String)
+	/**
+	 * Obtain Player UUID from Mojang API. Since Spigot / Paper
+	 * API's are very quirky, this uses Mojang's API to obtain UUIDs
+	 * of OfflinePlayers.
+	 *  
+	 * @param  playerName  the Bukkit Player Name (as String)
+	 * @return             the UUID of the Player
 	 */
 	public UUID getUserUUID(String playerName) {
 		UUID playerUUID = this.getUUID(playerName);
@@ -56,7 +63,6 @@ public class WhitelistClass {
     private UUID getUUID(String playerName) {
         try {
             String json = readUrl("https://api.mojang.com/users/profiles/minecraft/" + playerName);
-            System.out.println(json);
             Gson gson = new Gson();
             JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
             if(jsonObject == null) {

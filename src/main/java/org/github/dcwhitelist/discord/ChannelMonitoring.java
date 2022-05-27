@@ -23,13 +23,21 @@ public class ChannelMonitoring extends ListenerAdapter{
 		
 	}
 	
+	/**
+	 * No relevance to developers. Private function.
+	 */
 	public void init() {
 		this.channelID = this.yamlCreation.getChannelID();
 		this.jda = this.plugin.getConnectivity().getJDA();
 		this.jda.addEventListener(this);
 	}
 	
-	// Get Channel from YAML
+	/**
+	 * Returns the Channel as a TextChannel
+	 * retrieved from the YAML of the JavaPlugin.
+	 * 
+	 * @return the TextChannel from Discord
+	 */
 	public TextChannel getChannel() {
 		if(this.channelID == "") {
 			return null;
@@ -37,7 +45,9 @@ public class ChannelMonitoring extends ListenerAdapter{
 		return this.jda.getTextChannelById(this.channelID);
 	}
 	
-	// Event Listener
+	/**
+	 * No relevance to developers. Private function.
+	 */
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) { 
         String msg = event.getMessage().getContentRaw();

@@ -14,7 +14,15 @@ public class DiscordConnectivity {
 		this.beginBot();
 	}
 
-	// Returns the JDA Object
+	/**
+	 * Returns the JDA Object, where you may control
+	 * the bot via several functions. Review
+	 * https://github.com/DV8FromTheWorld/JDA for more
+	 * infomation.
+	 * 
+	 * @return the JDA Object
+	 * 
+	 */
 	public JDA getJDA() {
 		return this.jda;
 	}
@@ -23,7 +31,7 @@ public class DiscordConnectivity {
 	private void beginBot() {
 		try {
 			jda = JDABuilder.createDefault
-					("ODI0ODkyNTI0Njk4MDA5NjAw.YF1_Bw.lFeqVdMPook4cTKM80WFYpfNp18").build();
+					("*******************************************************").build();
 		} catch (LoginException e) {
 			e.printStackTrace();
 		}

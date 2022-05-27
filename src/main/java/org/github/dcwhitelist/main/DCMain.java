@@ -14,6 +14,7 @@ public class DCMain extends JavaPlugin {
 	private DiscordConnectivity discordConnectivity = new DiscordConnectivity();
 	private YamlCreation yamlCreation = new YamlCreation(this);
 	private ChannelMonitoring channelMonitoring = new ChannelMonitoring(this, this.yamlCreation);
+	
 	@Override
 	public void onEnable() {
 		
@@ -32,12 +33,33 @@ public class DCMain extends JavaPlugin {
 
 	}
 	
-	// Returns the Whitelist Class for Function Use
+	/**
+	 * Returns the DCWhitelist Plugin Instance
+	 * 
+	 * @return DCMain Instance
+	 */
+	public static DCMain getInstance() {
+		return JavaPlugin.getPlugin(DCMain.class);
+	}
+	
+	/**
+	 * Returns the Whitelist Methods in this plugin.
+	 * Contains {@link #whitelistClass} and all functions
+	 * present in it. Refer to the link.
+	 * 
+	 * @return returns the Whitelist Class
+ 	 */
 	public WhitelistClass getMethods() {
 		return this.whitelistClass;
 	}
 	
-	// Returns the Connectivity Class for Function Use
+	/**
+	 * Returns the Discord Connectivity Methods in this plugin.
+	 * Contains {@link #discordConnectivity} and all functions
+	 * present in it. Refer to the link.
+	 * 
+	 * @return returns the Connectivity Class
+ 	 */
 	public DiscordConnectivity getConnectivity() {
 		return this.discordConnectivity;
 	}

@@ -18,6 +18,9 @@ public class YamlCreation {
 		this.file = new File(this.plugin.getDataFolder(), "configuration.yml");
 	}
 
+	/**
+	 * No relevance to developers. Private function.
+	 */
 	public void init() {
 		// Creates Data Folder
 		if(!this.plugin.getDataFolder().exists()) {
