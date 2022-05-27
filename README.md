@@ -24,9 +24,29 @@ Steps to enable this plugin successfully are given below:
 <img src="https://cdn.discordapp.com/attachments/870748925571792916/979781178905198622/unknown.png" width="700">
 
 If you do notice any errors on the console on server disabling, please note these are errors from JDA (Discord API), and not from this plugin. Ignore the same.
+<br/>
+<br/>
 
 ### For Developers
 
 Hiya, devs! As a developer myself, I've custom coded these functions to be very helpful during any development that you're doing! Even for new developers, this API is very comfortable to work with and charming as well!
+<br/>
+<br/>
+To include the plugin as a dependency, please view the repositories and dependencies to be added into your pom.xml.
 
+**repositories:**
+```java
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+```
 
+**dependencies:**
+```java
+<dependency>
+    <groupId>com.github.FloofCat</groupId>
+    <artifactId>DCWhitelist</artifactId>
+    <version>v0.1</version>
+</dependency>
+```
