@@ -1,0 +1,5 @@
+name: DCWhitelisting
+version: 0.1
+main: org.github.dcwhitelist.main.DCMain
+api-version: 1.17
+authors: [ Floof ]
