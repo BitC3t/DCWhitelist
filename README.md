@@ -50,3 +50,16 @@ To include the plugin as a dependency, please view the repositories and dependen
     <version>v0.1</version>
 </dependency>
 ```
+
+(Wiki & Java Docs to be added)
+
+## Updates
+- [ ] Completion of Wiki
+- [ ] Completion of JavaDocs
+- [X] Completed Source Code
+- [X] Open Source
+
+----------
+
+For **any issues / bugs**, please open up an issue on GitHub.
+
