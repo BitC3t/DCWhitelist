@@ -21,7 +21,7 @@ Steps to enable this plugin successfully are given below:
 - Restart your server / reload the plugin.
 - You're done!
 
-<img src="https://cdn.discordapp.com/attachments/870748925571792916/979781178905198622/unknown.png" width="48">
+<img src="https://cdn.discordapp.com/attachments/870748925571792916/979781178905198622/unknown.png" width="700">
 
 If you do notice any errors on the console on server disabling, please note these are errors from JDA (Discord API), and not from this plugin. Ignore the same.
 
