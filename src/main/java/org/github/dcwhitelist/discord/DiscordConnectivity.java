@@ -14,6 +14,8 @@ public class DiscordConnectivity {
 		this.beginBot();
 	}
 
+
+
 	/**
 	 * Returns the JDA Object, where you may control
 	 * the bot via several functions. Review
