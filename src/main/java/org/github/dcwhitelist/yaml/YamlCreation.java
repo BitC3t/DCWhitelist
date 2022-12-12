@@ -3,6 +3,7 @@ package org.github.dcwhitelist.yaml;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -50,16 +51,20 @@ public class YamlCreation {
 		
 		// Comments
 		FileConfiguration configFile = YamlConfiguration.loadConfiguration(this.file);
-		configFile.setComments("DC", Arrays.asList("Welcome to the DC - MC Configuration.", "", "",
+		List<String> comments = Arrays.asList("Welcome to the DC - MC Configuration.", "", "",
 				"Made by Floof#8983. For any issues or any bugs, please open an issue @ https://github.com/FloofCat/DCWhitelist",
 				"To begin with, enter your channel ID below.", "", "",
-				"For example: \"Channel ID\": \"657025847622107148\""));
+				"For example: \"Channel ID\": \"657025847622107148\"");
+
+		int count = 1;
+		for(String com : comments) {
+			configFile.set("# " + count, com);
+		}
 		
 		try {
 			configFile.save(this.file);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			this.plugin.getLogger().info("Failed to save the file!");
 		}
 
 		config.set("Channel ID", "");

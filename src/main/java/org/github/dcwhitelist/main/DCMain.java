@@ -30,7 +30,7 @@ public class DCMain extends JavaPlugin {
 
 	@Override
 	public void onDisable() {
-
+		this.discordConnectivity.getJDA().shutdown();
 	}
 	
 	/**

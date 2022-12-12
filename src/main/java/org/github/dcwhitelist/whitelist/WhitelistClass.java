@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.github.dcwhitelist.main.DCMain;
 
 public class WhitelistClass {
 
@@ -76,8 +77,7 @@ public class WhitelistClass {
             return uuid;
 
         } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+			DCMain.getInstance().getLogger().info("Failed to get UUID of the player " + playerName + "! Either the player name is invalid or the Mojang API is offline and the plugin is unable to find the player on the Mojang Database!");
             return null;
         }
     }
